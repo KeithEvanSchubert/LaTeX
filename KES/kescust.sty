@@ -1,0 +1,154 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{kescust}[2005/08/31 LaTeX customizations by Keith Evan Schubert]
+\RequirePackage{url}      % for \url
+%\RequirePackage{epsf}     % to include eps file
+\RequirePackage{graphicx} % graphics controls
+\RequirePackage{color}    % to define colors
+%\RequirePackage{ams}      % ams commands
+\RequirePackage{amssymb}  % ams symbol
+\RequirePackage{amsmath}  % ams math
+\RequirePackage{floatflt} % better float control, adds here
+\RequirePackage[letterpaper]{geometry} % page geometry
+\RequirePackage{listings} % for code import
+% colors I like to use
+\definecolor{ans}{rgb}{1.00,0.00,0.00}
+\definecolor{red}{rgb}{1.00,0.00,0.00}
+\definecolor{green}{rgb}{0.00,1.00,0.00}
+\definecolor{blue}{rgb}{.00,0.00,1.00}
+\definecolor{yellow}{rgb}{1.00,1.00,0.00}
+\definecolor{magenta}{rgb}{1.00,0.00,1.00}
+\definecolor{cyan}{rgb}{0.00,1.00,1.00}
+\definecolor{purple}{rgb}{.75,0.25,1.00}
+\definecolor{gold}{rgb}{0.95,0.60,0.00}
+\definecolor{listinggray}{gray}{0.9}
+% Code importing
+% \SciLab{title}{label}{file}
+\newcommand{\SciLab}[3]{
+  \lstset{language=scilab}
+  \lstset{backgroundcolor=\color{listinggray},rulecolor=\color{blue}}
+  \lstset{linewidth=\textwidth}
+  \lstset{commentstyle=\textit, stringstyle=\upshape,showspaces=false}
+  \lstset{frame=tb}
+  \lstinputlisting[caption={#1},label={#2}]{#3}
+}
+\newcommand{\MatLab}[3]{
+  \lstset{language=matlab}
+  \lstset{backgroundcolor=\color{listinggray},rulecolor=\color{blue}}
+  \lstset{linewidth=\textwidth}
+  \lstset{commentstyle=\textit, stringstyle=\upshape,showspaces=false}
+  \lstset{frame=tb}
+  \lstinputlisting[caption={#1},label={#2}]{#3}
+}
+\newcommand{\Ccode}[3]{
+  \lstset{language=c}
+  \lstset{backgroundcolor=\color{listinggray},rulecolor=\color{blue}}
+  \lstset{linewidth=\textwidth}
+  \lstset{commentstyle=\textit, stringstyle=\upshape,showspaces=false}
+  \lstset{frame=tb}
+  \lstinputlisting[caption={#1},label={#2}]{#3}
+}
+\newcommand{\CPPcode}[3]{
+  \lstset{language=c++}
+  \lstset{backgroundcolor=\color{listinggray},rulecolor=\color{blue}}
+  \lstset{linewidth=\textwidth}
+  \lstset{commentstyle=\textit, stringstyle=\upshape,showspaces=false}
+  \lstset{frame=tb}
+  \lstinputlisting[caption={#1},label={#2}]{#3}
+}
+\newcommand{\Laplace}[1]{
+  \mathcal{L}\left({#1}\right)
+}
+% Define mathematical symbols and notation
+\newcommand{\RE}{\mathbb R}
+\newcommand{\FE}{\mathbb F}
+\newcommand{\CO}{\mathbb C}
+\newcommand{\Zed}{\mathbb Z}
+\newcommand{\diag}{{\rm diag}}
+\newcommand{\fl}{{\rm fl}}
+\newcommand{\In}{{\rm In}}
+\newcommand{\Null}{{\cal N}}
+\newcommand{\Pf}{\bfl {\it Proof:} \efl}
+\newcommand{\Pfend}{\bfr $\diamondsuit$ SDG $\diamondsuit$ \efr}
+\newcommand{\Ra}{{\cal R}}
+\newcommand{\rank}{{\rm rank}}
+\newcommand{\REn}{\RE^n}
+\newcommand{\REm}{\RE^m}
+\newcommand{\REnn}{\RE^{n \times n}}
+\newcommand{\REmm}{\RE^{m \times m}}
+\newcommand{\REmn}{\RE^{m \times n}}
+\newcommand{\REnm}{\RE^{n \times m}}
+\newcommand{\REmnr}{\RE^{m \times n}_r}
+\newcommand{\sgn}{{\rm sgn}}
+\newcommand{\sig}{{\rm sig}}
+\newcommand{\sinc}{{\rm sinc}}
+\newcommand{\Sp}{{\rm Sp}}
+\newcommand{\Tr}{{\rm Tr}}
+\newcommand{\vvec}{{\rm vec}}
+\newcommand{\blkeye}[1]{\mathcal{I}_{{#1}}}
+\newcommand{\rem}{\;{\rm rem}\;}
+\newcommand{\argmin}{\;{\rm argmin}\;}
+% shorthand for environments
+%     Tabbing
+\newcommand{\btab}{\begin{tabbing}
+  >>>> \= >>>> \= >>>> \= >>>> \= >>>>  \kill}
+\newcommand{\etab}{\end{tabbing}}
+%     Numbered Equations
+\newcommand{\beq}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{eqnarray}}
+%     Unnumbered Equations
+\newcommand{\beqn}{\begin{eqnarray*}}
+\newcommand{\eeqn}{\end{eqnarray*}}
+%     Numbered List
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+%     Boxed Equations
+\newlength{\lllen}
+\newcommand{\boxeq}[1]{
+  \setlength{\lllen}{\textwidth}
+  \addtolength{\lllen}{-2\fboxsep}
+  \addtolength{\lllen}{-2\fboxrule}
+  \noindent
+  \fbox{%
+  \begin{minipage}{\lllen}
+  \vspace{-\abovedisplayskip}
+  {#1}\end{minipage}}}
+% figures
+\def\bfig{\begin{figure}[h]
+          \begin{center}}
+\def\efig#1#2{\end{center}
+              \caption{#1}
+              \label{#2}
+              \end{figure}}
+%     right justify
+\newcommand{\bfr}{\begin{flushright}}
+\newcommand{\efr}{\end{flushright}}
+%     left justify
+\newcommand{\bfl}{\begin{flushleft}}
+\newcommand{\efl}{\end{flushleft}}
+%     quotations
+\newcommand{\bq}{\begin{quote}}
+\newcommand{\eq}{\end{quote}}
+%     arrays
+\newcommand{\ba}{\left[ \begin{array}}
+\newcommand{\ea}{\\ \end{array} \right]}
+%     matrices
+\newcommand{\bmat}{\left[\begin{matrix}}
+\newcommand{\emat}{\end{matrix}\right]}
+% misc
+\newcommand{\keseq}[1]{\underline{#1}}
+\newcommand{\Example}[1]{\vspace{6pt}\noindent\textbf{Example: {#1}}\vspace{6pt} }
+\newcommand{\Solution}{\vspace{6pt}\noindent\textbf{Solution:}\vspace{6pt} }
+\newcommand{\bb}{\cite}
+\newcommand{\VE}[1]{\in {\bf R}^{{#1}}}
+\newcommand{\EP}[2]{\in {\bf R}^{{#1} \times {#2}}}
+\newcommand{\gammaopt}{\gamma_{opt}}
+\newcommand{\xopt}{x_{opt}}
+\newcommand{\xgam}{x(\gamma)}
+\newcommand{\Ddots}{$\ddots$}
+% Theorem-like counters I use
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}%[chapter]
+\newtheorem{definition}{Definition}%[chapter]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}

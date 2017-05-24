@@ -1,0 +1,91 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{kescircuits}[2008/02/21 LaTeX Circuit drawings by Keith Evan Schubert]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Commands for Passive Components
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+%% This is a vertical resistor
+%% size:          20x60 +text width
+%% Connections:   (10,0),(10,60)
+%%
+\newcommand{\Rvert}[1]{
+\thinlines    \put(10,0){\line(0,1){12}}
+              \put(10,12){\line(-5,3){10}}
+              \put(0,18){\line(5,2){20}}
+              \put(20,26){\line(-5,2){20}}
+              \put(0,34){\line(5,2){20}}
+              \put(20,42){\line(-5,3){10}}
+              \put(10,48){\line(0,1){12}}
+              \put(18,30){\makebox(20,10)[l]{{#1}}}
+}
+%%
+%% This is a horizontal resistor
+%% size:          60x20 + text height
+%% Connections:   (0,10),(60,10)
+%%
+\newcommand{\Rhoriz}[1]{
+\thinlines    \put(0,10){\line(1,0){12}}
+              \put(12,10){\line(3,-5){6}}
+              \put(18,0){\line(2,5){8}}
+              \put(26,20){\line(2,-5){8}}
+              \put(34,0){\line(2,5){8}}
+              \put(42,20){\line(3,-5){6}}
+              \put(48,10){\line(1,0){12}}
+              \put(20,22){\makebox(30,10)[l]{{#1}}}
+}
+
+%%
+%% This is a vertical capacitor
+%% size:          20x40 +text width
+%% Connections:   (10,0),(10,40)
+%%
+\newcommand{\Cvert}[1]{
+\thinlines    \put(10,0){\line(0,1){17}}
+              \put(0,17){\line(1,0){20}}
+              \put(0,23){\line(1,0){20}}
+              \put(10,23){\line(0,1){17}}
+              \put(14,5){\makebox(20,10)[l]{{#1}}}
+}
+%%
+%% This is a horizontal capacitor
+%% size:          40x20 + text height
+%% Connections:   (0,10),(40,10)
+%%
+\newcommand{\Choriz}[1]{
+\thinlines    \put(0,10){\line(1,0){17}}
+              \put(17,0){\line(0,1){20}}
+              \put(23,0){\line(0,1){20}}
+              \put(23,10){\line(1,0){17}}
+              \put(5,22){\makebox(20,10)[l]{{#1}}}
+}
+
+
+%%
+%% This is a vertical inductor
+%% size:          20x40 +text width
+%% Connections:   (10,0),(10,40)
+%%
+\newcommand{\Lvert}[1]{
+\thinlines    \put(10,0){\line(0,1){17}}
+              \put(0,17){\line(1,0){20}}
+              \put(0,23){\line(1,0){20}}
+              \put(10,23){\line(0,1){17}}
+              \put(14,5){\makebox(20,10)[l]{{#1}}}
+}
+%%
+%% This is a horizontal inductor
+%% size:          40x20 + text height
+%% Connections:   (0,10),(40,10)
+%%
+\newcommand{\Lhoriz}[1]{
+\thinlines    \put(0,10){\line(1,0){17}}
+              \put(17,0){\line(0,1){20}}
+              \put(23,0){\line(0,1){20}}
+              \put(23,10){\line(1,0){17}}
+              \put(5,22){\makebox(20,10)[l]{{#1}}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  End Chapter commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

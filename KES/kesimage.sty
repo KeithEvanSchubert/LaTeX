@@ -1,0 +1,66 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{kesimage}[2007/01/27 LaTeX Image processing drawings by Keith Evan Schubert]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Grid Environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{GridPic}{
+\setlength{\unitlength}{8000sp}
+\begin{picture}(2000,2000)(0,0)
+\thinlines
+% Grid
+\multiput(250,250)(250,0){7}{\line(0,1){1500}}
+\multiput(250,250)(0,250){7}{\line(1,0){1500}}}
+{\end{picture}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Numbered Grid Environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{NumGridPic}{
+\setlength{\unitlength}{8000sp}%
+\begin{picture}(2000,2000)(0,0)
+\thinlines
+% Grid
+\multiput(250,250)(250,0){7}{\line(0,1){1500}}
+\multiput(250,250)(0,250){7}{\line(1,0){1500}}
+% numbers row 1
+\put(300,1550){\makebox(150,150){0}}
+\put(550,1550){\makebox(150,150){1}}
+\put(800,1550){\makebox(150,150){2}}
+\put(1050,1550){\makebox(150,150){3}}
+\put(1300,1550){\makebox(150,150){4}}
+\put(1550,1550){\makebox(150,150){5}}
+% numbers row 2
+\put(300,1300){\makebox(150,150){6}}
+\put(550,1300){\makebox(150,150){7}}
+\put(800,1300){\makebox(150,150){8}}
+\put(1050,1300){\makebox(150,150){9}}
+\put(1300,1300){\makebox(150,150){10}}
+\put(1550,1300){\makebox(150,150){11}}
+% numbers row 3
+\put(300,1050){\makebox(150,150){12}}
+\put(550,1050){\makebox(150,150){13}}
+\put(800,1050){\makebox(150,150){14}}
+\put(1050,1050){\makebox(150,150){15}}
+\put(1300,1050){\makebox(150,150){16}}
+\put(1550,1050){\makebox(150,150){17}}
+% numbers row 4
+\put(300,800){\makebox(150,150){18}}
+\put(550,800){\makebox(150,150){19}}
+\put(800,800){\makebox(150,150){20}}
+\put(1050,800){\makebox(150,150){21}}
+\put(1300,800){\makebox(150,150){22}}
+\put(1550,800){\makebox(150,150){23}}
+% numbers row 5
+\put(300,550){\makebox(150,150){24}}
+\put(550,550){\makebox(150,150){25}}
+\put(800,550){\makebox(150,150){26}}
+\put(1050,550){\makebox(150,150){27}}
+\put(1300,550){\makebox(150,150){28}}
+\put(1550,550){\makebox(150,150){29}}
+% numbers row 6
+\put(300,300){\makebox(150,150){30}}
+\put(550,300){\makebox(150,150){31}}
+\put(800,300){\makebox(150,150){32}}
+\put(1050,300){\makebox(150,150){33}}
+\put(1300,300){\makebox(150,150){34}}
+\put(1550,300){\makebox(150,150){35}}}
+{\end{picture}}

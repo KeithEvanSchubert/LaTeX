@@ -1,0 +1,776 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{keslogic}[2005/08/31 LaTeX Logic drawings by Keith Evan Schubert]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Commands for Boolean Logic
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Not}{
+\thinlines    \put(10,0){\line(0,1){16}}
+              \put(10,0){\line(3,2){12}}
+              \put(10,16){\line(3,-2){12}}
+              \put(0,8){\line(1,0){10}}
+              \put(24,8){\circle{4}}
+              \put(26,8){\line(1,0){10}}
+}
+\newcommand{\AndTwo}{
+\thinlines    \put(10,0){\line(0,1){20}}
+              \put(10,0){\line(1,0){10}}
+              \put(10,20){\line(1,0){10}}
+              \put(20,10){\oval(20,20)[r]}
+              \put(0,5){\line(1,0){10}}
+              \put(0,15){\line(1,0){10}}
+              \put(30,10){\line(1,0){10}}
+}
+\newcommand{\OrTwo}{
+\thinlines    \put(10,10){\oval(20,20)[r]}
+              \put(10,0){\line(1,0){10}}
+              \put(10,20){\line(1,0){10}}
+              \put(20,10){\oval(20,20)[r]}
+              \put(0,5){\line(1,0){19}}
+              \put(0,15){\line(1,0){19}}
+              \put(30,10){\line(1,0){10}}
+}
+\newcommand{\XorTwo}{
+\thinlines    \put(10,10){\oval(20,20)[r]}
+              \put(9,10){\oval(17,17)[r]}
+              \put(10,0){\line(1,0){10}}
+              \put(10,20){\line(1,0){10}}
+              \put(20,10){\oval(20,20)[r]}
+              \put(0,5){\line(1,0){17}}
+              \put(0,15){\line(1,0){17}}
+              \put(30,10){\line(1,0){10}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\AndFour}{
+\thinlines    \put(10,0){\line(0,1){20}}
+              \put(10,0){\line(1,0){10}}
+              \put(10,20){\line(1,0){10}}
+              \put(20,10){\oval(20,20)[r]}
+              \put(0,4){\line(1,0){10}}
+              \put(0,8){\line(1,0){10}}
+              \put(0,12){\line(1,0){10}}
+              \put(0,16){\line(1,0){10}}
+              \put(30,10){\line(1,0){10}}
+}
+\newcommand{\OrFour}{
+\thinlines    \put(10,10){\oval(20,20)[r]}
+              \put(10,0){\line(1,0){10}}
+              \put(10,20){\line(1,0){10}}
+              \put(20,10){\oval(20,20)[r]}
+              \put(0,4){\line(1,0){18.5}}
+              \put(0,8){\line(1,0){20}}
+              \put(0,12){\line(1,0){20}}
+              \put(0,16){\line(1,0){18.5}}
+              \put(30,10){\line(1,0){10}}
+}
+\newcommand{\XorFour}{
+\thinlines    \put(10,10){\oval(20,20)[r]}
+              \put(9,10){\oval(17,17)[r]}
+              \put(10,0){\line(1,0){10}}
+              \put(10,20){\line(1,0){10}}
+              \put(20,10){\oval(20,20)[r]}
+              \put(0,4){\line(1,0){16}}
+              \put(0,8){\line(1,0){17.5}}
+              \put(0,12){\line(1,0){17.5}}
+              \put(0,16){\line(1,0){16}}
+              \put(30,10){\line(1,0){10}}
+}
+\newcommand{\XnorFour}{
+\thinlines    \put(10,0){\line(0,1){20}}
+              \put(12,0){\line(0,1){20}}
+              \put(12,0){\line(1,0){10}}
+              \put(12,20){\line(1,0){10}}
+              \put(22,10){\oval(20,20)[r]}
+              \put(0,4){\line(1,0){10}}
+              \put(0,8){\line(1,0){10}}
+              \put(0,12){\line(1,0){10}}
+              \put(0,16){\line(1,0){10}}
+              \put(32,10){\line(1,0){8}}
+}
+\newcommand{\NandFour}{
+\thinlines    \put(8,0){\line(0,1){20}}
+              \put(8,0){\line(1,0){10}}
+              \put(8,20){\line(1,0){10}}
+              \put(18,10){\oval(20,20)[r]}
+              \put(0,4){\line(1,0){8}}
+              \put(0,8){\line(1,0){8}}
+              \put(0,12){\line(1,0){8}}
+              \put(0,16){\line(1,0){8}}
+              \put(30,10){\circle{4}}
+              \put(32,10){\line(1,0){8}}
+}
+\newcommand{\NorFour}{
+\thinlines    \put(8,10){\oval(20,20)[r]}
+              \put(8,0){\line(1,0){10}}
+              \put(8,20){\line(1,0){10}}
+              \put(18,10){\oval(20,20)[r]}
+              \put(0,4){\line(1,0){16.5}}
+              \put(0,8){\line(1,0){18}}
+              \put(0,12){\line(1,0){18}}
+              \put(0,16){\line(1,0){16.5}}
+              \put(30,10){\circle{4}}
+              \put(32,10){\line(1,0){8}}
+}
+\newcommand{\XnorTwo}{
+\thinlines    \put(10,0){\line(0,1){20}}
+              \put(12,0){\line(0,1){20}}
+              \put(12,0){\line(1,0){10}}
+              \put(12,20){\line(1,0){10}}
+              \put(22,10){\oval(20,20)[r]}
+              \put(0,5){\line(1,0){10}}
+              \put(0,15){\line(1,0){10}}
+              \put(32,10){\line(1,0){10}}
+}
+\newcommand{\NandTwo}{
+\thinlines    \put(10,0){\line(0,1){20}}
+              \put(10,0){\line(1,0){10}}
+              \put(10,20){\line(1,0){10}}
+              \put(20,10){\oval(20,20)[r]}
+              \put(0,5){\line(1,0){10}}
+              \put(0,15){\line(1,0){10}}
+              \put(32,10){\circle{4}}
+              \put(34,10){\line(1,0){10}}
+}
+\newcommand{\NorTwo}{
+\thinlines    \put(10,10){\oval(20,20)[r]}
+              \put(10,0){\line(1,0){10}}
+              \put(10,20){\line(1,0){10}}
+              \put(20,10){\oval(20,20)[r]}
+              \put(0,5){\line(1,0){19}}
+              \put(0,15){\line(1,0){19}}
+              \put(32,10){\circle{4}}
+              \put(34,10){\line(1,0){10}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Commands for Combinational
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\DecoderFour}{
+\thinlines    \put(10,20){\line(1,-1){20}}
+              \put(10,20){\line(0,1){60}}
+              \put(10,80){\line(1,1){20}}
+              \put(30,0){\line(0,1){100}}
+              \put(20,0){\line(0,1){10}}
+              \put(10,0){2\,/}
+              \put(0,50){\line(1,0){10}}
+              \put(30,20){\line(1,0){10}}
+              \put(23,17){3}
+              \put(30,40){\line(1,0){10}}
+              \put(23,37){2}
+              \put(30,60){\line(1,0){10}}
+              \put(23,57){1}
+              \put(30,80){\line(1,0){10}}
+              \put(23,77){0}
+}
+\newcommand{\DecoderEight}{
+\thinlines    \put(10,20){\line(1,-1){20}}
+              \put(10,20){\line(0,1){140}}
+              \put(10,160){\line(1,1){20}}
+              \put(30,0){\line(0,1){180}}
+              \put(20,0){\line(0,1){10}}
+              \put(10,0){3\,/}
+              \put(0,90){\line(1,0){10}}
+              \put(30,20){\line(1,0){10}}
+              \put(23,17){7}
+              \put(30,40){\line(1,0){10}}
+              \put(23,37){6}
+              \put(30,60){\line(1,0){10}}
+              \put(23,57){5}
+              \put(30,80){\line(1,0){10}}
+              \put(23,77){4}
+              \put(30,100){\line(1,0){10}}
+              \put(23,97){3}
+              \put(30,120){\line(1,0){10}}
+              \put(23,117){2}
+              \put(30,140){\line(1,0){10}}
+              \put(23,137){1}
+              \put(30,160){\line(1,0){10}}
+              \put(23,157){0}
+}
+\newcommand{\MuxFour}{
+\thinlines    \put(30,20){\line(-1,-1){20}}
+              \put(30,20){\line(0,1){60}}
+              \put(30,80){\line(-1,1){20}}
+              \put(10,0){\line(0,1){100}}
+              \put(20,0){\line(0,1){10}}
+              \put(17,0){/\,2}
+              \put(30,50){\line(1,0){10}}
+              \put(0,20){\line(1,0){10}}
+              \put(13,17){3}
+              \put(0,40){\line(1,0){10}}
+              \put(13,37){2}
+              \put(0,60){\line(1,0){10}}
+              \put(13,57){1}
+              \put(0,80){\line(1,0){10}}
+              \put(13,77){0}
+}
+\newcommand{\PALIn}[1]{
+\thinlines    \put(9,45){#1}
+              \put(7,0){\line(0,1){50}}
+              \put(7,20){\line(1,0){5}}
+              \put(12,11){\line(0,1){18}}
+              \put(12,11){\line(4,3){12}}
+              \put(12,29){\line(4,-3){12}}
+              \put(26,20){\circle{4}}
+              \put(33,20){\line(-1,0){5}}
+              \put(33,0){\line(0,1){20}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Commands for Integers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\SystolicCell}{
+\begin{center}
+{\tt    \setlength{\unitlength}{0.92pt}
+\begin{picture}(326,199)(0,0)
+\thinlines    \put(43,27){\dashbox{5}(185,135){}}
+              \put(88,58){\framebox(43,38){\shortstack{Full\\Adder}}}
+              % input 1 = prev sum
+              \put(94,110){\line(-1,1){74}}
+              \put(94,110){\line(0,-1){14}}
+              % input 2 = prev carry
+              \put(106,96){\line(0,1){85}}
+              % input b
+              \put(250,140){\line(-1,0){240}}
+              \put(162,140){\circle*{5}}
+              \put(161,140){\line(0,-1){29}}
+              % input a
+              \put(185,189){\line(0,-1){175}}
+              \put(185,122){\circle*{5}}
+              \put(169,122){\line(1,0){15}}
+              \put(168,122){\line(0,-1){11}}
+              % input carry = a*b
+              \put(154,91){\framebox(25,20){And}}
+              \put(165,91){\line(0,-1){14}}
+              \put(165,77){\line(-1,0){34}}
+              \put(135,82){$c_{in}$}
+              % output sum
+              \put(123,51){$s$}
+              \put(117,58){\line(0,-1){10}}
+              \put(118,48){\line(1,0){88}}
+              \put(206,48){\line(1,-1){35}}
+              % output carry
+              \put(88,51){$c_{out}$}
+              \put(106,59){\line(0,-1){40}}
+\end{picture}}
+\end{center}
+}
+\newcommand{\SystolicArray}{
+\begin{center}
+{\tt    \setlength{\unitlength}{0.92pt}
+\begin{picture}(420,300)(0,0)
+\thinlines    \multiput(37,34)(0,50){5}{\dashbox{5}(25,25){}}
+              \multiput(87,34)(0,50){5}{\dashbox{5}(25,25){}}
+              \multiput(137,34)(0,50){5}{\dashbox{5}(25,25){}}
+              \multiput(187,34)(0,50){5}{\dashbox{5}(25,25){}}
+              % c initial
+              \multiput(22,272)(50,0){4}{\line(1,-1){243}}
+              \put(167,270){0}
+              \put(117,270){0}
+              \put(67,270){0}
+              \put(17,270){0}
+              \put(22,222){\line(1,-1){193}}
+              \put(17,220){0}
+              \put(22,172){\line(1,-1){143}}
+              \put(17,170){0}
+              \put(22,122){\line(1,-1){93}}
+              \put(17,120){0}
+              \put(22,72){\line(1,-1){43}}
+              \put(17,70){0}
+              % c outputs
+              \put(62,20){$c_7$}
+              \put(112,20){$c_6$}
+              \put(162,20){$c_5$}
+              \put(212,20){$c_4$}
+              \put(262,20){$c_3$}
+              \put(312,20){$c_2$}
+              \put(362,20){$c_1$}
+              \put(412,20){$c_0$}
+              % b inputs
+              \multiput(70,46)(50,0){4}{\line(-1,0){37}}
+              \multiput(98,31)(50,0){3}{\line(-1,0){28}}
+              \multiput(70,31)(50,0){3}{\line(0,1){15}}
+              \put(224,41){0}
+              \multiput(220,96)(0,50){4}{\line(-1,0){172}}
+              \put(224,91){$b_3$}
+              \put(224,141){$b_2$}
+              \put(224,191){$b_1$}
+              \put(224,241){$b_0$}
+              % a inputs
+              \multiput(54,268)(50,0){4}{\line(0,-1){237}}
+              \put(200,270){$a_0$}
+              \put(150,270){$a_1$}
+              \put(100,270){$a_2$}
+              \put(50,270){$a_3$}
+              % input carry, across top
+              \multiput(48,268)(50,0){4}{\line(0,-1){237}}
+              \put(191,265){0}
+              \put(141,265){0}
+              \put(91,265){0}
+              \put(41,265){0}
+\end{picture}}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Commands for arithmetic
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ThreeAddy}{
+\begin{center}
+{\tt    \setlength{\unitlength}{0.92pt}
+\begin{picture}(200,190)(0,0)
+\thicklines   \multiput(20,20)(50,0){2}{\line(0,1){150}}
+              \put(170,20){\line(0,1){150}}
+\thinlines    \put(10,175){Bus 1}
+              \put(60,175){Bus 2}
+              \put(160,175){Bus 3}
+% ALU
+              \put(100,100){\line(0,1){20}}
+              \put(100,150){\line(0,1){20}}
+              \put(140,120){\line(0,1){30}}
+              \put(100,100){\line(1,0){20}}
+              \put(100,170){\line(1,0){20}}
+              \put(120,100){\line(1,1){20}}
+              \put(120,170){\line(1,-1){20}}
+              \put(100,120){\line(1,1){15}}
+              \put(100,150){\line(1,-1){15}}
+              \put(120,130){\textbf{ALU}}
+
+% Registers
+              \put(100,20){\framebox(40,70){Regs.}}
+              \put(20,160){\vector(1,0){80}}
+              \put(70,110){\vector(1,0){30}}
+              \put(140,135){\vector(1,0){30}}
+              \put(100,80){\vector(-1,0){80}}
+              \put(100,30){\vector(-1,0){30}}
+              \put(170,55){\vector(-1,0){30}}
+\end{picture}}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Commands for components
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\sidelines}[1]{\multicolumn{1}{|c|}{{#1}}}
+\newcommand{\bigendianCon}{
+  \begin{minipage}[l]{2in}
+  \begin{tabular}{cccc}
+    % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+    0 & 1 & \ldots & n \\
+    \hline
+    \sidelines{0\ldots 7} & \sidelines{0\ldots 7} & \ldots & \sidelines{0\ldots 7} \\
+    \hline
+  \end{tabular}
+  \end{minipage}
+  }
+\newcommand{\bigendianInc}{
+  \begin{minipage}[l]{2in}
+  \begin{tabular}{cccc}
+    % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+    0 & 1 & \ldots & n \\
+    \hline
+    \sidelines{7\ldots 0} & \sidelines{7\ldots 0} & \ldots & \sidelines{7\ldots 0} \\
+    \hline
+  \end{tabular}
+  \end{minipage}
+  }
+\newcommand{\littleendianInc}{
+  \begin{minipage}[l]{2in}
+  \begin{tabular}{cccc}
+    % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+    n & \ldots & 1 & 0 \\
+    \hline
+    \sidelines{0\ldots 7} & \sidelines{0\ldots 7} & \ldots & \sidelines{0\ldots 7} \\
+    \hline
+  \end{tabular}
+  \end{minipage}
+  }
+\newcommand{\littleendianCon}{
+  \begin{minipage}[l]{2in}
+  \begin{tabular}{cccc}
+    % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+    n & \ldots & 1 & 0 \\
+    \hline
+    \sidelines{7\ldots 0} & \sidelines{7\ldots 0} & \ldots & \sidelines{7\ldots 0} \\
+    \hline
+  \end{tabular}
+  \end{minipage}
+  }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Commands for Pipeline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%v
+\newcommand{\Arch}{
+\begin{center}
+{\tt    \setlength{\unitlength}{0.92pt}
+\begin{picture}(200,190)(0,0)
+\thicklines   \multiput(20,20)(50,0){2}{\line(0,1){150}}
+              \put(170,20){\line(0,1){150}}
+\thinlines    \put(10,175){Bus 1}
+              \put(60,175){Bus 2}
+              \put(160,175){Bus 3}
+% ALU
+              \put(100,100){\line(0,1){20}}
+              \put(100,150){\line(0,1){20}}
+              \put(140,120){\line(0,1){30}}
+              \put(100,100){\line(1,0){20}}
+              \put(100,170){\line(1,0){20}}
+              \put(120,100){\line(1,1){20}}
+              \put(120,170){\line(1,-1){20}}
+              \put(100,120){\line(1,1){15}}
+              \put(100,150){\line(1,-1){15}}
+              \put(120,130){\textbf{ALU}}
+
+% Registers
+              \put(100,20){\framebox(40,70){Regs.}}
+              \put(20,160){\vector(1,0){80}}
+              \put(70,110){\vector(1,0){30}}
+              \put(140,135){\vector(1,0){30}}
+              \put(100,80){\vector(-1,0){80}}
+              \put(100,30){\vector(-1,0){30}}
+              \put(170,55){\vector(-1,0){30}}
+\end{picture}}
+\end{center}
+}
+\newcommand{\IFetch}{
+\begin{center}
+{\tt    \setlength{\unitlength}{0.92pt}
+\begin{picture}(100,190)(0,0)
+\thinlines    \put(30,140){\framebox(60,20){Fetch}}
+              \put(60,140){\vector(0,-1){20}}
+              \put(30,100){\framebox(60,20){Decode}}
+              \put(60,100){\vector(0,-1){20}}
+              \put(30,60){\framebox(60,20){Execute}}
+              \put(60,60){\vector(0,-1){20}}
+              \put(30,20){\framebox(60,20){Store}}
+              \put(60,20){\line(0,-1){10}}
+              \put(60,10){\line(-1,0){50}}
+              \put(10,10){\line(0,1){170}}
+              \put(60,180){\line(-1,0){50}}
+              \put(60,180){\vector(0,-1){20}}
+\end{picture}}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Tiny Computer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\TinyAcc}{
+\begin{center}
+{\tt    \setlength{\unitlength}{1pt}
+\begin{picture}(200,190)(0,0)
+\thinlines
+%% Accumulator
+              \put(40,153){\framebox(40,15){Acc}}
+              \put(60,143){\vector(0,1){10}}
+              \put(62,143){$\hbox{LD}_{\hbox{acc}}$}
+              \put(20,160){\vector(1,0){20}} % from mux to acc
+% Mux to AC
+              \put(20,155){\line(0,1){10}}
+              \put(10,145){\line(1,1){10}}
+              \put(10,175){\line(1,-1){10}}
+              \put(10,145){\line(0,1){30}}
+              \put(11,162){0}
+              \put(11,152){1}
+% Mux to ALU
+              \put(20,105){\line(0,1){10}}
+              \put(10,95){\line(1,1){10}}
+              \put(10,125){\line(1,-1){10}}
+              \put(10,95){\line(0,1){30}}
+              \put(11,112){1}
+              \put(11,102){0}
+% Mux control lines
+              \put(15,135){\vector(0,-1){15}}
+              \put(15,135){\line(1,0){10}}
+              \put(15,135){\vector(0,1){15}}
+              \put(27,133){$\bar S / D$}
+% ALU
+              \put(100,100){\line(0,1){20}}
+              \put(100,150){\line(0,1){20}}
+              \put(140,120){\line(0,1){30}}
+              \put(100,100){\line(1,0){20}}
+              \put(100,170){\line(1,0){20}}
+              \put(120,100){\line(1,1){20}}
+              \put(120,170){\line(1,-1){20}}
+              \put(100,120){\line(1,1){15}}
+              \put(100,150){\line(1,-1){15}}
+              \put(120,130){\textbf{ALU}}
+              \put(130,100){\vector(0,1){10}}
+              \put(132,100){$\hbox{ALU}_{\hbox{cmd}}$}
+              \put(80,160){\vector(1,0){20}}   % from acc to alu
+              \put(20,110){\vector(1,0){80}}   % from mux to alu
+              \put(140,135){\vector(1,0){30}}  % ALU output
+              \put(170,55){\line(0,1){140}}    % ALU bus output 1
+              \put(170,195){\line(-1,0){170}}  % ALU bus output 2
+              \put(0,195){\line(0,-1){30}}     % ALU bus output 3
+              \put(0,165){\vector(1,0){10}}    % from ALU to mux
+              \put(0,155){\vector(1,0){10}}    % 0 to ACC mux
+              \put(0,147){0}
+              \put(0,115){\vector(1,0){10}}    % 0 to ALU mux
+              \put(0,117){0}
+              \put(0,105){\vector(1,0){10}}    % Reg to ALU mux
+% Registers
+              \put(100,20){\framebox(40,70){Regs.}}
+              \put(100,20){\line(-1,1){10}}    % output demux
+              \put(90,30){\line(0,1){50}}
+              \put(90,80){\line(1,1){10}}
+              \put(140,20){\line(1,1){10}}     % input demux
+              \put(150,30){\line(0,1){50}}
+              \put(150,80){\line(-1,1){10}}
+              \put(145,15){\vector(0,1){10}}   % control input
+              \put(95,15){\vector(0,1){10}}
+              \put(145,15){\line(-1,0){60}}
+              \put(47,13){IR[1:0]}
+              \put(170,45){\vector(-1,0){20}}  % LD Reg
+              \put(172,42){$\hbox{LD}_{\hbox{reg}}$}
+              \put(90,55){\line(-1,0){90}}     % output line
+              \put(0,55){\line(0,1){50}}       % output line to mux
+              \put(170,55){\vector(-1,0){20}}  % input to reg
+\end{picture}}
+\end{center}
+}
+\newcommand{\TinyAccControl}{
+\begin{center}
+{\tt    \setlength{\unitlength}{1pt}
+\begin{picture}(200,190)(0,0)
+\thinlines
+%% Accumulator
+              \put(40,153){\framebox(40,15){Acc}}
+              \put(60,143){\vector(0,1){10}}
+              \put(62,143){$\hbox{LD}_{\hbox{acc}}$}
+              \put(20,160){\vector(1,0){20}} % from mux to acc
+% Mux to AC
+              \put(20,155){\line(0,1){10}}
+              \put(10,145){\line(1,1){10}}
+              \put(10,175){\line(1,-1){10}}
+              \put(10,145){\line(0,1){30}}
+              \put(11,162){0}
+              \put(11,152){1}
+% Mux to ALU
+              \put(20,105){\line(0,1){10}}
+              \put(10,95){\line(1,1){10}}
+              \put(10,125){\line(1,-1){10}}
+              \put(10,95){\line(0,1){30}}
+              \put(11,112){1}
+              \put(11,102){0}
+% Mux control lines
+              \put(15,135){\vector(0,-1){15}}
+              \put(15,135){\line(1,0){10}}
+              \put(15,135){\vector(0,1){15}}
+              \put(27,133){$\bar S / D$}
+% ALU
+              \put(100,100){\line(0,1){20}}
+              \put(100,150){\line(0,1){20}}
+              \put(140,120){\line(0,1){30}}
+              \put(100,100){\line(1,0){20}}
+              \put(100,170){\line(1,0){20}}
+              \put(120,100){\line(1,1){20}}
+              \put(120,170){\line(1,-1){20}}
+              \put(100,120){\line(1,1){15}}
+              \put(100,150){\line(1,-1){15}}
+              \put(120,130){\textbf{ALU}}
+              \put(130,100){\vector(0,1){10}}
+              \put(132,100){$\hbox{ALU}_{\hbox{cmd}}$}
+              \put(80,160){\vector(1,0){20}}   % from acc to alu
+              \put(20,110){\vector(1,0){80}}   % from mux to alu
+              \put(140,135){\vector(1,0){30}}  % ALU output
+              \put(170,55){\line(0,1){140}}    % ALU bus output 1
+              \put(170,195){\line(-1,0){170}}  % ALU bus output 2
+              \put(0,195){\line(0,-1){30}}     % ALU bus output 3
+              \put(0,165){\vector(1,0){10}}    % from ALU to mux
+              \put(0,155){\vector(1,0){10}}    % 0 to ACC mux
+              \put(0,147){0}
+              \put(0,115){\vector(1,0){10}}    % 0 to ALU mux
+              \put(0,117){0}
+              \put(0,105){\vector(1,0){10}}    % Reg to ALU mux
+% Registers
+              \put(100,20){\framebox(40,70){Regs.}}
+              \put(100,20){\line(-1,1){10}}    % output demux
+              \put(90,30){\line(0,1){50}}
+              \put(90,80){\line(1,1){10}}
+              \put(140,20){\line(1,1){10}}     % input demux
+              \put(150,30){\line(0,1){50}}
+              \put(150,80){\line(-1,1){10}}
+              \put(90,55){\line(-1,0){90}}     % output line
+              \put(0,55){\line(0,1){50}}       % output line to mux
+              \put(170,55){\vector(-1,0){20}}  % input to reg
+\end{picture}}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Commands for register file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%v
+\newcommand{\DFlipFlop}{
+\thicklines    \put(0,0){\line(1,0){20}}
+               \put(0,0){\line(0,1){30}}
+               \put(20,30){\line(-1,0){20}}
+               \put(20,30){\line(0,-1){30}}
+               \put(2,20){D}
+               \put(2,2){Clk}
+               \put(13,20){Q}
+}
+\newcommand{\TristateGateLow}{
+\thicklines    \put(10,-5){\line(0,1){10}}
+               \put(10,-5){\line(2,1){10}}
+               \put(10,5){\line(2,-1){10}}
+               \put(15,-4){\circle{2}}
+               \put(15,-5){\line(0,-1){10}}
+               \put(15,-15){\line(-1,0){15}}
+               \put(10,0){\line(-1,0){10}}
+               \put(20,0){\line(1,0){10}}
+}
+\newcommand{\LogicGate}[1]{
+\thicklines    \put(0,0){\line(1,0){10}}   % input
+               \put(10,-5){\line(0,1){10}} % gate
+               \put(20,-5){\line(0,1){10}} % gate
+               \put(10,5){\line(1,0){10}}  % gate
+               \put(10,-5){\line(1,0){10}} % gate
+               \put(13,-2){{#1}}
+               \put(20,0){\line(1,0){10}}  % output
+}
+\newcommand{\MuxTwoXFour}{
+\thicklines    \put(0,0){\line(1,0){10}} %input
+               \put(0,-25){\line(1,0){15}} %address
+               \put(10,-20){\line(1,-1){10}}
+               \put(10,-20){\line(0,1){40}}
+               \put(10,20){\line(1,1){10}}
+               \put(20,-30){\line(0,1){60}}
+               \multiput(20,-15)(0,10){4}{\line(1,0){10}} %output
+               \put(13,12){3}
+               \put(13,2){2}
+               \put(13,-8){1}
+               \put(13,-18){0}
+}
+\newcommand{\FourBitRegister}{
+\begin{center}
+{\tt    \setlength{\unitlength}{1pt}
+\begin{picture}(120,170)(25,0)
+\thicklines    \multiput(30,10)(0,40){4}{\DFlipFlop}
+               \multiput(30,33)(0,40){4}{\line(-1,0){30}}
+               \put(-10,70){\shortstack{d\\a\\t\\a\\ \\i\\n}}
+               \multiput(30,15)(0,40){4}{\line(-1,0){10}}
+               \put(-10,18){load}
+               \multiput(20,15)(0,40){3}{\circle*{5}}
+               \put(20,15){\line(0,1){120}}
+               \multiput(50,33)(0,40){4}{\line(1,0){10}}
+               \put(100,67){\shortstack{d\\a\\t\\a\\ \\0\\u\\t}}
+               \put(20,15){\line(-1,0){20}}
+               \multiput(60,33)(0,40){4}{\TristateGateLow}
+               \multiput(60,18)(0,40){3}{\circle*{5}}
+               \put(60,5){\line(0,1){133}}
+               \put(0,5){\line(1,0){60}}
+               \put(-18,7){out\_en}
+               \put(15,0){\framebox(70,165)}
+\end{picture}}
+\end{center}
+}
+\newcommand{\RegisterFile}{
+\begin{center}
+{\tt    \setlength{\unitlength}{1pt}
+\begin{picture}(120,170)(50,0)
+\thicklines    \put(-55,15){\framebox(270,160)}
+               \multiput(30,20)(0,40){4}{\framebox(170,31)}
+               \multiput(33,42)(0,40){4}{data\_in[3:0]}
+               \multiput(33,32)(0,40){4}{load}
+               \multiput(33,22)(0,40){4}{out\_en}
+               \multiput(133,42)(0,40){4}{data\_out[3:0]}
+               \multiput(103,25)(0,40){4}{\textbf{4-bit Reg}}
+               % data in
+               \multiput(30,46)(0,40){3}{\line(-1,0){10}}
+               \multiput(20,86)(0,40){3}{\circle*{5}}
+               \put(20,46){\line(0,1){120}}
+               \put(30,166){\line(-1,0){90}}
+               \put(-115,168){data\_in[3:0]}
+               % data out
+               \multiput(200,46)(0,40){3}{\line(1,0){10}}
+               \multiput(210,86)(0,40){3}{\circle*{5}}
+               \put(210,46){\line(0,1){120}}
+               \put(200,166){\line(1,0){40}}
+               \put(218,168){data\_out[3:0]}
+               % read
+               \put(-60,130){\MuxTwoXFour}
+               \put(-100,132){read\_add}
+               \put(-95,107){read\_en}
+               \put(-30,145){\line(0,1){11}} %wire 3
+               \put(-30,156){\line(1,0){40}}
+               \put(-20,135){\line(-1,0){20}} %wire 2
+               \put(-20,135){\line(0,-1){19}}
+               \put(-20,116){\line(1,0){30}}
+               \put(-25,125){\line(-1,0){10}} %wire 1
+               \put(-25,125){\line(0,-1){49}}
+               \put(-25,76){\line(1,0){35}}
+               \put(-30,115){\line(0,-1){79}} %wire 0
+               \put(-30,36){\line(1,0){40}}
+               \multiput(30,36)(0,40){4}{\line(-1,0){20}}
+               % write
+               \put(-60,56){\MuxTwoXFour}
+               \put(-105,58){write\_add}
+               \put(-100,33){write\_en}
+               \put(0,146){\line(1,0){10}} %wire 3
+               \put(0,71){\line(-1,0){30}}
+               \put(0,71){\line(0,1){75}}
+               \put(5,106){\line(1,0){10}} %wire 2
+               \put(5,61){\line(-1,0){35}}
+               \put(5,61){\line(0,1){45}}
+               \put(10,51){\line(-1,0){40}} %wire 1
+               \put(10,51){\line(0,1){15}}
+               \put(10,41){\line(-1,0){40}} %wire 0
+               \put(10,41){\line(0,-1){15}}
+               \multiput(30,26)(0,40){4}{\line(-1,0){20}}
+\end{picture}}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Commands for machine organization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%v
+\newcommand{\MachineOrg}{
+\begin{center}
+{\tt \setlength{\unitlength}{30pt}
+\begin{picture}(12,12)(0,0)
+%\scriptsize
+%Bus
+\put(3,9){\line(1,0){9}}
+\put(3.2,9.1){IO Bus}
+%slant
+\put(4.5,8.85){\line(1,1){.3}}
+\put(4.5,9.1){4}
+%Reg File
+\put(8,4){\framebox(3,4){\shortstack{Reg File\\ $4 \times 4$}}}
+\put(9.5,9){\vector(0,-1){1}}
+\put(9.25,7.7){Din}
+\put(9.25,4.1){Dout}
+\put(9.5,4){\vector(0,-1){1}}
+\put(10.1,6.75){Addr}
+\put(12,6.85){\vector(-1,0){1}}
+%slant
+\put(11.4, 6.7){\line(1,1){.3}}
+\put(11.4, 7){2}
+\put(10.5,5.25){W}
+\put(11.5,5.35){\vector(-1,0){.5}}
+%Acc
+\put(4,5.1){Acc}
+\put(4,4){\framebox(3,1)}
+\put(5.5,6){\vector(0,-1){1}}
+\put(5.25,4.7){Din}
+\put(6.5,5.5){\vector(0,-1){.5}}
+\put(6.2,4.7){Clear}
+\put(4.1,4.1){Load}
+\put(4.5,3.5){\vector(0,1){.5}}
+\put(5.25,4.1){Dout}
+\put(5.5,4){\vector(0,-1){1}}
+%back to Bus
+\put(5.5,3.5){\line(1,0){2}}
+\put(7.5,3.5){\vector(0,1){5.5}}
+%ALU
+\put(5,1){\framebox(5,2){4-bit ALU}}
+\put(8.6,2.1){Sub/$\overline{Add}$}
+\put(10.5,2.2){\vector(-1,0){.5}}
+\put(9.3,1.3){Cen}
+\put(10.5,1.4){\vector(-1,0){.5}}
+%back to Acc
+\put(7.5,1){\line(0,-1){.5}}
+\put(7.5,.5){\line(-1,0){4}}
+\put(3.5,.5){\line(0,1){5.5}}
+\put(3.5,6){\line(1,0){2}}
+%slant
+\put(5.35,5.45){\line(1,1){.3}}
+\put(5.6,5.45){4}
+\end{picture}}
+\end{center}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  End Chapter commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

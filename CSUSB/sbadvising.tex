@@ -1,0 +1,40 @@
+\documentclass{article}
+\title{Manual for sbadvising.cls}
+\author{Keith Evan Schubert}
+\begin{document}
+\maketitle
+
+\section{Introduction}
+This is the latex class to make the undergraduate advising sheets.  My original plan was to make it easier for me to advise and track my students, but I hope this will help make our department paperless.
+
+\section{Installation}
+Installation is simple, since it is a \LaTeX class.  It handles all its own dependencies, all you have to do is put it in the right place and make sure \TeX is aware of it.  There are two ways to install it:
+\begin{enumerate}
+\item Put it in your latex path (/tex/latex/sbadvising/sbadvising.cls) then have tex refresh the file name database.
+\item Put the class file in the same directory as the advising sheets.
+\end{enumerate}
+I advise doing the first one, as this is a one time fix with almost no chance of future problems or loss.
+
+\section{Commands} 
+The commands are simple:
+
+\begin{tabular}{lp{3in}}\hline
+\verb1\documentclass{sbadvising}1 & This specifies that the sbadvising class should be used.\\\hline
+\verb1\Advisor{name}1 & This declares the advisor's name and must go before \verb1\makesheet1, usually in the preamble.\\\hline
+\verb1\Student{name}1 & This declares the advisee's (student) name and must go before \verb1\makesheet1, usually in the preamble.\\\hline
+\verb1\StudentID{#}1 & This declares the advisee's student id number and must go before \verb1\makesheet1, usually in the preamble.\\\hline
+\end{tabular}
+
+\begin{tabular}{lp{3in}}\hline
+\verb1\Catalog{year}1 & This declares the advisee's catalog year and must go before \verb1\makesheet1, usually in the preamble.\\\hline
+\verb1\BSCS1 & This specifies the advisee is in the bachelor of science in computer science program, and will mark the appropriate space.  It must go before \verb1\makesheet1, usually in the preamble.\\
+\verb1\BSCE1 & This specifies the advisee is in the bachelor of science in computer engineering program, and will mark the appropriate space.  It must go before \verb1\makesheet1, usually in the preamble.\\
+\verb1\BACS1 & This specifies the advisee is in the bachelor of science in computer systems program, and will mark the appropriate space.  It must go before \verb1\makesheet1, usually in the preamble.\\
+\verb1\BSBI1 & This specifies the advisee is in the bachelor of science in bioinformatics program, and will mark the appropriate space.  It must go before \verb1\makesheet1, usually in the preamble.\\\hline
+\verb1\setupadvice{quarter}{year}{#}1 & This sets up the four advising boxes defaults and enters the date and circles the quarter's for you.  You specify the quarter and year to start, and the number of quarters to advise, and it does the rest.  Note summer is counted in this form.\\
+\verb1\setupadvice*{quarter}{year}{#}1 & This sets up the four advising boxes defaults and enters the date and circles the quarter's for you.  You specify the quarter and year to start, and the number of quarters to advise, and it does the rest.  Note summer is not counted in this form.\\\hline
+\verb5\schedule{s1}{s2}{s3}{s4}{c1}{c2}5 & This specifies what to put on the four schedule lines and two comment lines in the advising blocks.  Each successive use applies to the next block, which makes it easy to switch things around (relative position in the file determines the block in the final sheet).  All parameters are required (the curly brace pairs must be there), but may be empty (this is the default for undefined squares).  Note s1-s4 are the four lines of the schedule area in the quarter advising block, and c1-c2 are the two lines of the comment area in the same block.\\\hline
+\verb1\makesheet1 & This command must be the last command (other than end document), as it is the only one that makes any output.  It uses the values specified by the previous commands to create the sheet.\\\hline
+\end{tabular}
+
+\end{document}
