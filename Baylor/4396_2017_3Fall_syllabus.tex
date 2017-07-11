@@ -1,0 +1,92 @@
+\documentclass{baylorsyllabus}
+\Course{ELC}{4396/5311}{Advanced Digital Logic}
+\Semester{Fall}
+\Year{2017}
+\OfficeHours{MW}{1:30 - 3:50pm}
+\ClassTimes{TR}{11:00-12:15pm}
+\ClassRoom{Rogers 115}
+\Textbook{Pong Chu, \textbf{FPGA Prototyping by Verilog Examples}}
+\Supplementbook{Wakerly, \textbf{Digital Design} - Your ELC2337 book}
+\Prereqs{ELC2337   Digital Logic Design}
+\HWTime{11:55 PM}
+\HW{15}{quiz}
+\Midterm{25}
+\Final{30}
+\FinalDateTime{Tuesday}{12/12}{2:00 - 4:00 pm}
+
+\begin{document}
+
+\Starts{Monday}{8}{21}
+\Ends{Monday}{12}{4}
+\Holidays{
+{Labor Day}{9}{4},
+{Fall Break}{10}{13},
+{Thanksgiving}{11}{22},
+{Thanksgiving}{11}{23},
+{Thanksgiving}{11}{24},
+{Study Days}{12}{5},
+{Study Days}{12}{6}
+}
+%topic,read,hw,lab
+\Topics{
+{Verilog: ports, data types, modelling}{Chu-1}{}{},
+{FPGAs, lab reports}{Chu-2}{}{},
+{Basics of RTL design, synthesis}{Chu-3}{Lab 1 - IO}{},
+{Barrel Shifter}{}{}{},
+{Barrel Shifter}{}{}{},
+{Registers, State Machines, Timing}{Chu-4}{Lab 2 - 3.11.1}{},
+{FIFO Buffer}{}{}{},
+{LIFO Buffer}{}{}{},
+{Shift Registers}{}{Lab 3 - Stack 4.7.7}{},
+{PWM}{}{}{},
+{FSM, Mealy, Moore, ASM}{Chu-5}{Lab 4 - 4.7.2}{},
+{Edge detection, debounce - Several methods}{}{}{},
+{Build your own Debouncer}{}{}{},
+{Test your own Debouncer}{}{}{},
+{ASMD and RTL}{Chu-6}{Lab 5 - 5.5.1 or 5.5.2}{},
+{Babbage Difference Engine}{}{}{},
+{Babbage Difference Engine}{}{}{},
+{Fun with Files and Tasks, Testing}{Chu-7}{Lab 6 -6.5.7}{},
+{Postsynthesis, Timing}{K 12, W 5.2, 7.0, 8.1}{}{},
+{Positive, Negative, and Mixed Logic}{K 9.1, W 4.1.5}{}{},
+{Six ways to design with Tables}{K 9.2, 10.1, W 4}{}{},
+{Removing Errors with Karnaugh Maps}{K 10.2, W 4}{}{},
+{Quine-McCluskey - tabular Karnaugh Maps}{K 10.3, W 4}{}{},
+{Espresso - the fast way to a cover}{K 10.4}{}{},
+{Synchronous design, states, tables}{K 11}{HW 1 - Combinatorial}{},
+{Kmaps for Sequential}{}{}{},
+{Asynchronous Design, transition tables}{K 13}{}{},
+{Race conditions}{}{}{},
+{State Reduction}{}{HW 2 - Sequential}{}
+}
+
+%\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+\Objective{\section{Objective:}
+The goal of this course is to develop the students’ knowledge of advanced topics in digital design. Upon successful completion of this course, the student will have learned:
+\begin{enumerate}
+    \item FPGA design
+    \item Barrel shifters
+    \item Timing, hazards
+    \item Propagation delays and pulse width
+    \item ASM chart design
+    \item Testing and reliability
+    \item Alternate techniques
+    \item Quine-McCluskey algorithm
+    \item Espresso algorithm
+    \item Synchronous and Asynchronous design
+\end{enumerate}
+
+
+\subsection{Catalog Description}
+Computer-automated design of digital circuits. Functional specification; structural and
+behavioral modeling using hardware description languages; simulation for design verification and
+timing analysis; circuit synthesis for FPGA implementation; testing and fault diagnosis.
+}
+
+\MakeSyllabus
+\end{document}
+
+
