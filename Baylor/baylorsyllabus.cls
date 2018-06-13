@@ -87,7 +87,7 @@
 \gdef\@school{School of Engineering and Computer Science}
 \gdef\@department{Department of Electrical and Computer Engineering}
 \gdef\@instructor{Keith Evan Schubert}
-\gdef\@office{Rogers - Room 300F}
+\gdef\@office{Rogers - Room 300G}
 \gdef\@telephone{(254)710-3348}
 \gdef\@email{keith\_schubert@baylor.edu}
 \gdef\@supplementbook{none}
@@ -152,13 +152,17 @@
 \gdef\@FinalPresentationPercent{0}
 \gdef\@paperdate{}
 \gdef\@summarydate{}
-\newcommand{\FinalPresentation}[3]{\gdef\@FinalPresentation{true}
+\gdef\@slidesdate{}
+\newcommand{\FinalPresentation}[4]{\gdef\@FinalPresentation{true}
     \gdef\@FinalPresentationPercent{#1}
     \gdef\@paperdate{#2}
-    \gdef\@summarydate{#3}}
+    \gdef\@summarydate{#3}
+    \gdef\@slidesdate{#4}}
 \gdef\@Project{false}
 \gdef\@ProjectPercent{0}
+\gdef\@ProjectFinalPresentation{false}
 \newcommand{\Project}[1]{\gdef\@Project{true} \gdef\@ProjectPercent{#1}}
+\newcommand{\ProjectFinalPresentation}{\gdef\@ProjectFinalPresentation{true}}
 \newcommand{\LMS}[1]{\gdef\@LMS{#1}}
 \newcommand{\NoSeparator}{\gdef\@separator{}}
 %
@@ -240,7 +244,7 @@ in the semester.\par}
 \newcommand{\ADAStatement}[1]{\gdef\@adastatement{#1}}
 %
 % Title IX
-\gdef\@titleix{\section{Title IX}
+\gdef\@titleix{\section{Title IX Office \textendash\ Title IX Coordinator, Kristan Tucker}
 {
 TITLE IX OFFICE \textendash\ If you or someone you know would like help related to an
 experience of sexual violence including sexual assault, harassment, domestic
@@ -263,6 +267,16 @@ danger, please call the Baylor Police Department (254-710-2222) or Waco Police
 Department (9-1-1) immediately}.\par}
 }
 \newcommand{\TitleIX}[1]{\gdef\@titleix{#1}}
+%
+% Vets
+\gdef\@vets{\section{Military Student Advisory}
+{Veterans and active duty military personnel are welcomed and encouraged to communicate,
+in advance if possible, any special circumstances (e.g., upcoming deployment, drill
+requirements, disability accommodations). You are also encouraged to visit the VETS
+Program Office with any questions at (254) 710-7264.\par}
+}
+\newcommand{\Vets}[1]{\gdef\@vets{#1}}
+
 %
 % Date
 %
@@ -300,7 +314,7 @@ Department (9-1-1) immediately}.\par}
 %             Grading Policies
 %
 \newcommand{\Grading}{\section{Grading}
-{All assignments will be submitted in the course \@LMS site, by the time specified unless previously
+{All assignments will be submitted in the course \@LMS\ site, by the time specified unless previously
 arranged with the instructor.  The grading percentages and policies of each graded area are
 listed in their sections below.\par}
 {The grading scheme is as follows.\par}
@@ -308,7 +322,7 @@ listed in their sections below.\par}
  Le\=tterxx \= Score Rangexxxxx \kill
 Letter \>\> Score Range \\
 \>  A        \>$[94  - 100]$\\
-\>  A-       \>$[90 - 94]$\\
+\>  A-       \>$[90 - 94)$\\
 \>  B+       \>$[87 - 90)$\\
 \>  B        \>$[83 - 87)$\\
 \>  B-       \>$[80 - 83)$\\
@@ -331,7 +345,7 @@ Letter \>\> Score Range \\
 %\>  D        \>$[60 - 67)$\\
 %\>  F        \>$[00 - 60)$\\
 %\end{tabbing}
-{All grades will be available on the course \@LMS site.\par}
+{All grades will be available on the course \@LMS\ site.\par}
 {I do not curve grades, but I do give opportunities to earn credit by doing extra work that helps
 you learn the material and grow as an engineer.  Extra credit for tests takes the form of
 writing tutorials that I will post on the website for other students to benefit.  You must write
@@ -369,7 +383,7 @@ are here to get a top quality education, but in order to get it you must do more
 \ifthenelse{\equal{\@HWType}{quiz}}{
 {Homework has been implemented as quizzes in the course \@LMS.
 You may take them in whenever you feel like and in a piecemeal fashion, just be careful of the closing date
-(see the \@LMS calendar or main page, note it is due by \@hwtime).
+(see the \@LMS\ calendar or main page, note it is due by \@hwtime).
 You will get immediate feedback on the correctness of each answer when you submit the homework, which should help
 you to learn as you go.  In a few cases, extended answers, such as proofs, are required, which will require me to
 grade them and thus cannot be verified immediately.  These proofs must be organized, and show all the steps and the math
@@ -378,11 +392,11 @@ with both math and computer code, and thus will actually make your life easier. 
 Unix installs, but for those who use other platforms, I have put links on my webpage (look for the Tex link on my
 main page) to where you can download it for your home computer.} formatting.  For extended answer problems, how you get the
 answer is as important (if not more important) than what the answer is.\par}
-{Homework is due by \@hwtime on the due date.  Late homework will be not accepted, the \@LMS will promptly close
+{Homework is due by \@hwtime\ on the due date.  Late homework will be not accepted, the \@LMS\ will promptly close
 the quizzes.  Your clock might differ, so please try to be in safely under the deadline.  You can save your work
 without submitting, which allows you to divide up
 when you do your problems, but if in the end you don't click submit it won't be graded and you will get a zero.
-Please carefully watch the due date and time, as \@LMS will automatically stop the quiz when time runs out. After
+Please carefully watch the due date and time, as \@LMS\ will automatically stop the quiz when time runs out. After
 I set it, I do not control it, it is automatic.  If you don't submit the quiz in time you will get a zero.  Please
 do not risk this by waiting till the last second.\par}
 {Students are encouraged to discuss class material, \emph{but the work must be done individually}.  The homework
@@ -394,7 +408,7 @@ to discuss the material related to assignments, but when it comes to actually do
 done individually.\par}
 }{
 {Homework has been implemented as a file upload in the course \@LMS, and is due by \@hwtime.  You may type them in
-\LaTeX\footnote{\LaTeX is a free document formatter, available on all platforms, that does a great job with both math
+\LaTeX\footnote{\LaTeX\ is a free document formatter, available on all platforms, that does a great job with both math
 and computer code, and thus will actually make your life easier.  It comes with standard Linux and Unix installs, but
 for those who use other platforms, I have put links on my webpage (look for the Tex like on my main page) to where you
 can download it for your home computer.} and make a pdf or handwrite neatly and scan, just be careful of the closing date.
@@ -422,29 +436,63 @@ work it is to be done individually.\par}}
 will do will familiarize you with scientific computation and \LaTeX.  You will
 not finish the in class activities if you do not prepare by reading in advance.
 You will work individually, and produce a brief write-up of each activity as a
-chapter.  The reports are to be written in \LaTeX and uploaded in Canvas at four
-points in the semester.  A \LaTeX template and class is available on the class
+chapter.  The reports are to be written in \LaTeX\ and uploaded in Canvas at four
+points in the semester.  A \LaTeX\ template and class is available on the class
 website and GitHub with sample code.  Your write-up should consist of an
 introduction and description of the algoritm, implementation (code),
 testing/results, and analysis/comments.  Ideally, the write-ups should be around
 3-6 pages including picture.  As long as you cover the material, shorter is
 definitely better! \par}
 }{}
-\ifthenelse{\equal{\@classreportselected}{false}
+\ifthenelse{\equal{\@course}{{4372}}}{\gdef\@classreportselected{true}
+{These reports are like lab reports for classroom activities.  The activities you
+will do will familiarize you with biomedical instrumentation and preparing reports.
+You will not finish the in class activities if you do not prepare by reading in
+advance.  You will work in groups of two, but will individually produce a brief
+write-up of of one of the listed activities and your partner must do the other.
+You will write 2 reports in the semester due as indicated in the schedule.
+The reports are to be written in \LaTeX\ and uploaded in Canvas.  A \LaTeX\ template
+and class is available on the class website and GitHub with sample code.  Your
+write-up should consist of an introduction with history of the problem, clinical
+need, description of solution and implementation including wiring diagrams and code
+as appropriate, testing/results, and analysis/comments.  Ideally, the write-ups
+should be around 5-8 pages including pictures.  As long as you cover the material,
+shorter is definitely better! \par}
+}{}
+\ifthenelse{\equal{\@course}{{5311}}}{\gdef\@classreportselected{true}
+The class-lab is an essential aspect in really understanding the material.  Each day in class we will do labs that will
+be integrated into the lesson.  You will then pick one of these labs every two weeks to write-up, thus you will each
+write five labs.  You will only receive credit for your write-up and you and your lab partner may not do write-ups
+on the same lab. To ensure this, your write-up will have your name first, your partner's name second, and the lab
+topic as the title.  If you both submit the same topic, neither gets any credit.  All lab files must be written in
+\LaTeX and compiled to a pdf then uploaded to the class \@LMS.  You may re-submit a fixed lab for a re-grade, so the
+earlier you submit, the more time you have to fix them.  Stay on top of your labs!\par
+Labs should have:
+\begin{enumerate}
+\item an introduction that explains the purpose, theory, and materials needed;
+\item an experimental plan that describes what to do and how to do it;
+\item an analysis section, which includes the data and your analysis;
+\item a conclusion, which pulls it all together and draws out the implications.
+\end{enumerate}
+I am not forcing a particular format, because I am treating this as an engineering report.  You are trying to explain
+clearly what was done, why, and the importance.  Graphs and diagrams are highly encouraged.  A template is provided
+online, but you are welcome to use your own.\par
+}{}
+\ifthenelse{\equal{\@classreportselected}{false}}
 {These reports are like lab reports for classroom activities.  The activities you
 will do will familiarize you with the material and \LaTeX.  You will
 not finish the in class activities if you do not prepare by reading in advance.
 Grad students must work individually and undergrads in groups of two or at most
 three, and produce a brief write-up of each activity as a chapter (members of
 undergrad groups alternate so each writes ever other activity).  The reports are
-to be written in \LaTeX and uploaded in Canvas at various
-points in the semester.  A \LaTeX template and class is available on the class
+to be written in \LaTeX\ and uploaded in Canvas at various
+points in the semester.  A \LaTeX\ template and class is available on the class
 website and GitHub with sample code.  Your write-up should consist of an
 introduction and description of the key idea, implementation (using code and
 diagrams as appropriate),
 testing/results, and analysis/comments.  Ideally, the write-ups should be around
 3-6 pages including picture.  As long as you cover the material, shorter is
-definitely better! \par}
+definitely better! \par
 }{}
 }
 %
@@ -462,7 +510,7 @@ verify that your code works by using our testing server.  Instructions of how to
 supplied in the lab.  You must each get a GitHub user account and upload it in the \@LMS.  You will work in
 groups of 2. When your group is finished you will write a report
 documenting what you accomplished in \LaTeX\ using the template LabN.tex provided.  All project files must be
-uploaded to the class \@LMS by the end of day on the day marked on the schedule.  On the due date of the project
+uploaded to the class \@LMS\ by the end of day on the day marked on the schedule.  On the due date of the project
 you will be assigned a report of someone (random by \@LMS) to review and provide them comments to improve.  The
 one who wrote the report may then modify their lab write up to improve it.  I will then grade it.  Note you must
 submit your project on time, or it will not make it into the review and grading process.  I can't change this later.
@@ -543,22 +591,47 @@ willing to present the results at NSS/MIC should the paper be accepted.\par}
  \end{enumerate}}
 }{}
 \ifthenelse{\equal{\@course}{{5311}}}{\gdef\@projectselected{true}
-{\textbf{Graduate students only!}  Applying what you learned to a practicle problem of interest is essential to learn the topics involved.  You will select
-and get approved a project of interest in the remainder of the textbook (UART, Keyboard, PicoBlaze interfacing a sonar, etc.).
-When you are finished you will write a report
+{\textbf{Graduate students only!}  Applying what you learned to a practicle problem
+of interest is essential to learn the topics involved.  You will select
+and get approved a project of interest in the remainder of the textbook (UART,
+Keyboard, PicoBlaze interfacing a sonar, etc.) or a project utilizing the some
+features of the new board (3D motion sensor, Celsius/Fahrenheit/Kelvin thermometer,
+etc.).  When you are finished you will write a report
 documenting what you accomplished.  All project files must be zipped into a single
-file and uploaded to the class \@LMS by the end of day on the day marked on the schedule.  If you submit your project
-on time, you may re-submit a fixed project for a re-grade.  Stay on top of your project!\par}
+file and uploaded to the class \@LMS\ by the end of day on the day marked on the
+schedule.  Due to this the grad student percentages exceed 100\%, so the grad
+student percentages will be weighted be multiplied by 100/1\@ProjectPercent.  \par}
+}{}
+\ifthenelse{\equal{\@course}{{5313}}}{\gdef\@projectselected{true}
+{The building of a computer is an essential aspect in really understanding the material,
+and as such we will be building an out of order MIPS computer in an HDL. Key parts of the project
+will be discussed and worked on in class but you must work on aspects as homework to
+finish. You will need to test your components by building testbenches and generating
+timing diagrams. Undergraduates will work in groups of 2, and graduate students will
+work individually. When your group is finished you will
+write a report documenting what you accomplished. A pdf of your report must be uploaded to
+the class \@LMS\ by the end of day on the day marked on
+the schedule. If you submit your project on time, you may re-submit a fixed project for a
+re-grade. Stay on top of your project!  \par}
+\subsection{GitHub}
+{Code for your project will be in a GitHub repository.  Sign up for GitHub (free)
+and send me your username and I will create a repo for you in the class.  I will
+be watching for regular progress. \par}
 }{}
 \ifthenelse{\equal{\@course}{{4372}}}{\gdef\@projectselected{true}
-Applying what you learned to a practicle problem of interest is essential to learn the topics involved.  You will select
-and get approved a project of interest in the course topics area, study it so you can explain it.  When you are finished you
-will write a report documenting what you researched.  All project files must be zipped into a single
-file and uploaded to the class \@LMS by the end of day on the day marked on the schedule.  If you submit your project
-early, you may re-submit a fixed project for a re-grade.  Stay on top of your project!
-In place of the final, your group will be presenting in about 8-10 min what your group researched.  Each person will evaluate
-the other groups.  Evaluating the other groups will be part of your grade.  The final presentation is\par
-\indent\textbf{\@finaldayofweek, \@finaldate at \@finaltime}\par
+Applying what you learned to a practicle problem of interest is essential to learn
+the topics involved.  You will form a 2 person company that will build a practical
+biomedical device following the theme presented in the class.  Your first step is
+to research and write a ``white paper'' proposing your topic, and upload it to the
+class \@LMS\ by the end of day on the day marked on the schedule.  If approved you will
+examine the problem as entrepreneurs, develop and test your solution, then prepare
+a filing (final report modeled as a lightweight FDA filing).  All project files
+must be zipped into a single file for the filing and uploaded to the class \@LMS by
+the end of day on the day marked on the schedule. In place of the final, your group
+will be presenting in about 6-10 min your product.  Each person will vote for the
+product of the year, and the winner will receive an automatic A for the project.
+The final presentation is\par
+\indent\textbf{\@finaldayofweek, \@finaldate\ at \@finaltime}\par
 }{}
 \ifthenelse{\equal{\@projectselected}{false}}{
 {You will be working on a semester long research project in medical imaging.  You
@@ -594,17 +667,25 @@ willing to present the results at NSS/MIC should the paper be accepted.\par}
 % ACA 5313 RP
 %
 \newcommand{\ResearchPresentationText}{\section{Research Presentation (\@FinalPresentationPercent\%)}
-{An essential part of graduate study is the ability to learn new areas and present them to your peers.
-The research presentation will help prepare you to do this.  It will be on a topic from this course that you choose.
-You will find a journal or conference paper on the subject, and explain it to the class (for instance you can check out
-citeseer from the link on my website or use Google scholar).  Note I will not accept presentations on chapters from books,
-or articles from popular science magazines, while these are great things to read, they are not scholarly research publications.
-You will be given 5-10 minutes (depending on the size of the class) on the last day to present your results.  You should use
-some presentation software (power point, pdf, etc.) to present the key ideas of your topic.  The presentation time is short,
-but about the time of a poster session.\par}
-{You must upload in \@LMS by \@paperdate, an electronic copy of the paper.  Only one person can present on a given article,
+{An essential part of continuing education and also graduate study is the ability
+to learn new areas and present them to your peers.  The research presentation will
+help prepare you to do this.  It will be on a topic from this course that you choose.
+You will find a journal or conference paper on the subject written in the last 7
+years, and explain it to the class (for instance you can check out citeseer from
+the link on my website, use Google scholar, IEEE, etc.).  Note I will not accept
+presentations on chapters from books, or articles from popular science magazines,
+while these are great things to read, they are not scholarly research publications.
+You will be given 5-10 minutes (depending on the size of the class) on the date of
+the final to present your results.  You should use some presentation software
+(power point, pdf, etc.) to present the key ideas of your topic.  The presentation
+time is short, but about the time of a poster session.\par}
+{You must upload in \@LMS\ by \@paperdate, an electronic copy of the paper.  Only one person can present on a given article,
 and priority is given on a first come basis.\par}
-{You must upload in \@LMS by \@summarydate, a one page summary of the key ideas in your paper.\par}}
+{You must upload in \@LMS\ by \@summarydate, a one page summary of the key ideas in your paper.\par}
+{You must upload in \@LMS\ by \@slidesdate, your draft presentation slides.\par}
+{You must upload in \@LMS\ by \@finaldate, your final presentation slides.  Note this
+is a \@finaldayofweek and also the day when the final is scheduled and it is when
+you will present it to the class at \@finaltime. \par}}
 %
 %                lab
 %
@@ -618,8 +699,8 @@ verify that your code works by using our testing server.  Instructions of how to
 supplied in the lab.  You must each get a GitHub user account and upload it in the \@LMS.
  You will work in groups of 2. When your group is finished you will write a report
 documenting what you accomplished in \LaTeX\ using the template LabN.tex provided.  All project files must be
-uploaded to the class \@LMS by the end of day on the day marked on the schedule.  On the due date of the project
-you will be assigned a report of someone (random by \@LMS) to review and provide them comments to improve.  The
+uploaded to the class \@LMS\ by the end of day on the day marked on the schedule.  On the due date of the project
+you will be assigned a report of someone (random by \@LMS\) to review and provide them comments to improve.  The
 one who wrote the report may then modify their lab write up to improve it.  I will then grade it.  Note you must
 submit your project on time, or it will not make it into the review and grading process.  I can't change this later.
 Stay on top of your project!\par}
@@ -666,7 +747,7 @@ clearly what was done, why, and the importance.  Graphs and diagrams are highly 
 online, but you are welcome to use your own.\par}
 }{
 The lab is an essential aspect in really understanding the material.  All lab files must be zipped into a single
-file and uploaded to the class \@LMS by the end of day on the Monday following the lab.  If you submit your lab
+file and uploaded to the class \@LMS\ by the end of day on the Monday following the lab.  If you submit your lab
 on time, you may re-submit a fixed lab for a re-grade.  If you do not submit a completed lab on time, you
 will get a 0 and cannot re-submit the lab for a re-grade.  Stay on top of your labs!\par
 }}}}
@@ -708,6 +789,7 @@ of the help these provides.\par}
 \@campuspolicies
 \@adastatement
 \@titleix
+\@vets
 \@gradwriting
 \section{Other Information}
 {The student is responsible for all material covered in the readings, class, labs, and also for all announcements
@@ -949,6 +1031,8 @@ advertised through \href{http://www.r2labs.org}{r2labs.org}.\par}}
   \ScheduleLine{Final, \@finaldayofweek\ at \@finaltime}{}{}{}{\@finaldate}{\@separator}}{}
   \ifthenelse{\equal{\@FinalPresentation}{true}}{
   \ScheduleLine{Presentation, \@finaldayofweek\ at \@finaltime}{}{}{}{\@finaldate}{\@separator}}{}
+  \ifthenelse{\equal{\@ProjectFinalPresentation}{true}}{
+  \ScheduleLine{Presentation, \@finaldayofweek\ at \@finaltime}{}{}{}{\@finaldate}{\@separator}}{}
 \end{Schedule}
 \@objective
 \Grading
@@ -960,7 +1044,7 @@ advertised through \href{http://www.r2labs.org}{r2labs.org}.\par}}
 \ifthenelse{\equal{\@Project}{true}}{\ProjectText}{}
 \ifthenelse{\equal{\@Midterm}{true}}{\MidtermText}{}
 \ifthenelse{\equal{\@Final}{true}}{\FinalText}{}
-\ifthenelse{\equal{\@FinalPresentation}{true}}{\FinalPresentationText}{}
+\ifthenelse{\equal{\@FinalPresentation}{true}}{\ResearchPresentationText}{}
 \Legalese
 
 }
